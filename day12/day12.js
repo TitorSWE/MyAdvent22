@@ -33,9 +33,8 @@ for (let i=0; i<ipt.length ; i++){
     line = [];
     for (let j=0; j<ipt[0].length; j++){
         let letter = ipt[i][j]
-        if (letter == "S"){
-            S.push(i);
-            S.push(j);
+        if (letter == "S" || letter == "a"){
+            S.push([i,j]);
         }
         node = Object.create(Node);
         node.letter = letter;
@@ -58,7 +57,6 @@ for (let i=0; i<nodeMatrix.length; i++){
         nodeMatrix[i][j].adjacents = adjacents;
     }
 }
-
 
 
 function findAdjacents(node){
@@ -111,4 +109,27 @@ function search(root){
     }
 }
 
-console.log(search(nodeMatrix[S[0]][S[1]]))
+
+distFromE = search(nodeMatrix[20][0])
+console.log(distFromE)
+
+// Have to reset all nodes
+
+distanceList = S.map(minSearch);
+
+function minSearch(element){
+    for(let i=0; i<nodeMatrix.length; i++){
+        for(let j=0; j<nodeMatrix[0].length; j++){
+            currentNode = nodeMatrix[i][j];
+            currentNode.marked = false;
+            currentNode.distance = 0;
+        }
+    }
+    let dist = search(nodeMatrix[element[0]][element[1]]);
+    if (typeof dist === "undefined"){
+        dist = Infinity;
+    }
+    return dist;
+}
+
+console.log(Math.min(...distanceList))
