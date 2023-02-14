@@ -20,4 +20,4 @@ The idea was to implement a Breadth-First search algorithm. I created an object 
 
 ### Part two
 
-When I created all my nodes, I registred all nodes of a minimum hight in the array S. I iterated the search function over all nodes in S and let's not forget to re-initialized all nodes before operate the search.
+When I created all my nodes, I registred all nodes of a minimum hight in the array S. I iterated the search function over all nodes in S and let's not forget to re-initialized all nodes before operating the search.
