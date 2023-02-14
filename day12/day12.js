@@ -28,7 +28,8 @@ function nodeValue(char){
     return char.charCodeAt(0)
 }
 
-let S = []
+let S = [] // array of nodes of minimum hight (a or S)
+
 for (let i=0; i<ipt.length ; i++){
     line = [];
     for (let j=0; j<ipt[0].length; j++){

@@ -2,6 +2,16 @@
 
 Mostly in Javascript
 
+## Day 11
+
+### Part one
+
+I created an object monkey, and I applied the rules explictely explained. Nothing to report
+
+### Part two
+
+Really hard to think of working with the modulo of lcm, (which is by the way easy to compute beacause each numbers are prime). 
+
 ## Day 12 
 
 ### Part one 
