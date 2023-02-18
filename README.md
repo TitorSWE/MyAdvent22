@@ -2,6 +2,17 @@
 
 Mostly in Javascript
 
+## Day 7
+
+### Part one
+
+Data structure chosen : A tree. Each directory has a father (execept the root) and an array of children.
+To compute size of directories I coded a recursive function.
+
+### Part two
+
+Nothing to report.
+
 ## Day 11
 
 ### Part one
