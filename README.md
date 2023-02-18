@@ -32,3 +32,9 @@ The idea was to implement a Breadth-First search algorithm. I created an object 
 ### Part two
 
 When I created all my nodes, I registred all nodes of a minimum hight in the array S. I iterated the search function over all nodes in S and let's not forget to re-initialized all nodes before operating the search.
+
+## Day 13
+
+### Part one
+
+I didn't know about JSON.parse(). It could have been useful. Therefore I practiced my recursivity skills. Indeed I coded a recursive function to convert my inputs into array and I applied on each these arrays the rules explained in the instructions with also a recursive function.
