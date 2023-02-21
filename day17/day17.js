@@ -24,13 +24,16 @@ cave.matrix = [[1,1,1,1,1,1,1,1,1]];
 
 let countRock = 0;
 let count = 0;
-while(countRock < 2022){
+while(countRock < 1000000000000){
     let shape = Object.create(Shape);
     shape.down = cave.high + 4;
     shape.up = shape.down + shapes[countRock % shapes.length].length -1;
-    for (let i=cave.high; i<shape.up; i++){
-        cave.matrix.push([1,0,0,0,0,0,0,0,1]);
+    if (cave.high < shape.up){
+        for (let i=cave.high; i<shape.up; i++){
+            cave.matrix.push([1,0,0,0,0,0,0,0,1]);
+        }
     }
+ 
     shape.listPoints = findPoints(shapes[countRock % shapes.length], cave);
     let stuck = false;
     while (!stuck){
@@ -47,6 +50,7 @@ while(countRock < 2022){
     if (shape.up > cave.high){
         cave.high = shape.up;
     }
+
     
     for (let i=0; i<shape.listPoints.length; i++){
         let [x,y] = shape.listPoints[i];
