@@ -54,3 +54,15 @@ I was hard to understand the concept of circulary buffer. Check what did on of m
 ### Part two
 
 Nothing to report 
+
+## Day 21 
+
+I really enjoyed this one :)
+
+### Part one
+
+After several problem that I solved using recursive functions, it was easier for me to solve quite rapidly. I created a Monkey object which has a name and an attribute operation. Operation is a number of an array containing 2 monkeys and the operation.
+
+### Part two
+
+First, I coded a loop in order to try different values. But of course it was not that simple. I had the intuition that there was only one unique branch (in my graph) that linked the root to humn. I verified the hypothesis and stores the path into an array. Then I solved recursively. I check if the monkey at left is in the path or not, I compute the value of the other monkey, I solve the equation and then I call again the function to the next monkey in the path, until the monkey is humn.
