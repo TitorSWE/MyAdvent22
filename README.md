@@ -39,8 +39,18 @@ When I created all my nodes, I registred all nodes of a minimum hight in the arr
 
 I didn't know about JSON.parse(). It could have been useful. Therefore I practiced my recursivity skills. Indeed I coded a recursive function to convert my inputs into array and I applied on each these arrays the rules explained in the instructions with also a recursive function.
 
-## day 17
+## Day 17
 
 ### Part one
 
 I created two objects, the shape and the cave. The cave of object has an attribute matrix which contains 0 and 1, 1 is for an obstacle. The object shape have 3 attributes : the up, down and the list of points. I only had points of a shape in the matrix cave when the shape is stuck.
+
+## Day 20
+
+### Part one 
+
+I was hard to understand the concept of circulary buffer. Check what did on of my brilant classmate : (https://github.com/NuageTompis/Advent-of-Code/blob/main/2022/Day20.js) :)
+
+### Part two
+
+Nothing to report 
