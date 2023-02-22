@@ -38,3 +38,9 @@ When I created all my nodes, I registred all nodes of a minimum hight in the arr
 ### Part one
 
 I didn't know about JSON.parse(). It could have been useful. Therefore I practiced my recursivity skills. Indeed I coded a recursive function to convert my inputs into array and I applied on each these arrays the rules explained in the instructions with also a recursive function.
+
+## day 17
+
+### Part one
+
+I created two objects, the shape and the cave. The cave of object has an attribute matrix which contains 0 and 1, 1 is for an obstacle. The object shape have 3 attributes : the up, down and the list of points. I only had points of a shape in the matrix cave when the shape is stuck.
