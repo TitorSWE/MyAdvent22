@@ -2,16 +2,33 @@ var fs = require('fs');
 var path = require('path');
 var ipt = fs.readFileSync("input-13.txt", 'utf8').split('\n\n');
 
-// parsing
+// Part one
+
 let data = ipt.map(element => element.split("\n"));
-
 let treatedInputs = data.map(treatment);
-
 let boolArray = treatedInputs.map(element => compare(element[0], element[1]));
-
 let Sum = boolArray.reduce(indexTrue,0);
 
 console.log(Sum);
+
+// Part two 
+let listDiviser = treatedInputs.reduce((array, currentValue) => {
+    array.push(currentValue[0]);
+    array.push(currentValue[1]);
+    return array;
+}, []);
+
+let div1 = [[2]];
+let div2 = [[6]];
+
+listDiviser.push(div1);
+listDiviser.push(div2);
+
+let orderedDiv = listDiviser.sort(comparaison);
+let Index = orderedDiv.reduce(findDiv, []);
+let key = Index[0]*Index[1];
+
+console.log(key);
 
 function indexTrue(sum, currentValue, index){
     if (currentValue === true){
@@ -114,6 +131,20 @@ function compare(left, right){
     if (typeof right === 'number'){
         return compare(left,[right]);
     }
+}
 
+function findDiv(res, div,index){
+    if (compare(div1, div) === 0 || compare(div2,div) === 0){
+        res.push(index + 1);
+    }
+    return res;
+}
+
+function comparaison(a,b){
+    let bool = compare(a,b);
+    if (bool == true){
+        return -1
+    }
+    return 1;
 }
 
