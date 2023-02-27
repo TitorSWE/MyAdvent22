@@ -45,6 +45,17 @@ I didn't know about JSON.parse(). It could have been useful. Therefore I practic
 
 I created two objects, the shape and the cave. The cave of object has an attribute matrix which contains 0 and 1, 1 is for an obstacle. The object shape have 3 attributes : the up, down and the list of points. I only had points of a shape in the matrix cave when the shape is stuck.
 
+## Day 18
+
+### Part one
+
+Nothing to report
+
+### Part two
+I found contours of the rocks, then used a BFS in order to find each air cubes which has an adjacent rock cube. Since I started from a air cube outside the rocks, I only found exterior faces. 
+I lost time because I didn't well find the contours ...
+
+
 ## Day 20
 
 ### Part one 

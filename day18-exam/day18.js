@@ -1,9 +1,11 @@
 var fs = require('fs');
 var ipt = fs.readFileSync("input18.txt", "utf8").split('\n');
 
+// Parsing
 let cubes = ipt.map( element => element.split(',').map(Number));
 
-// Part one
+// PART ONE 
+
 let faces = 0;
 // counting neighboors for each cubes
 let adjacents = cubes.reduce(countAdjacent, faces);
@@ -12,40 +14,43 @@ let resOne = (6*cubes.length - adjacents);
 console.log("partOne ", resOne);
 
 
-// Part two :
+// PART TWO :
 // Find deliminations
 let [[xmin, ymin, zmin], [xmax, ymax, zmax]] = cubes.reduce(findMax, [[0,0,0],[0,0,0]]);
-// console.log([[xmin, ymin, zmin], [xmax, ymax, zmax]]);
 
 let start = [xmin-1,ymin-1,zmin-1];
 let end = [xmax + 1,ymax + 1, zmax +1];
 let longest = Math.max(...end);
 let smallest =Math.min(...start);
 
-// Search with BFS
+// Search with BFS, 
 let resTwo = BFS([smallest, smallest, smallest], cubes, [longest,longest,longest]);
-console.log("Part two ",resTwo);
+console.log("Part two ", resTwo);
 
 function BFS(start, cubes, end){
-    let queue = [];
+
+    let queue = []; // FIFO
     queue.push(start);
     let amount = 0;
     let visited = [];
     
     while(queue.length !=0){
+
         let current = queue.shift();
-        let access = reachable(current, start, end);
-        for (let i=0; i<access.length; i++){
-            if (isIn(cubes, access[i])){
-                amount += 1;
+
+        let neighboors = reachable(current, start, end); // neighboors of current (could be a air cube of rockCube)
+        neighboors.forEach( cube => {
+            if (isIn(cubes, cube)){
+                amount += 1; // exterior face found !
             } else {
-                if (!isIn(visited, access[i])){
-                    queue.push(access[i]);
-                    visited.push(access[i]);
+                if (!isIn(visited, cube)){
+                    queue.push(cube);
+                    visited.push(cube); // marked as visited
                 }
             }
+        });
+            
         }
-    }
     return amount;
 }
 
